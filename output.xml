@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.11 on win32)" generated="20241016 11:17:21.640" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="D:\TestWorld\Login.robot">
+<test id="s1-t1" name="Valid Login" line="13">
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>11</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="Steps">
+<arg>${URL}</arg>
+<msg timestamp="20241016 11:17:29.994" level="INFO">Browser opened with URL: http://192.168.22.1/</msg>
+<status status="PASS" starttime="20241016 11:17:27.617" endtime="20241016 11:17:29.994"/>
+</kw>
+<kw name="Maximize Browser Window" library="Steps">
+<msg timestamp="20241016 11:17:31.034" level="INFO">Browser window maximized</msg>
+<status status="PASS" starttime="20241016 11:17:29.994" endtime="20241016 11:17:31.034"/>
+</kw>
+<kw name="Set Selenium Speed" library="Steps">
+<arg>${DELAY}</arg>
+<msg timestamp="20241016 11:17:31.035" level="INFO">Selenium speed set to 20 seconds</msg>
+<status status="PASS" starttime="20241016 11:17:31.034" endtime="20241016 11:17:31.035"/>
+</kw>
+<status status="PASS" starttime="20241016 11:17:27.617" endtime="20241016 11:17:31.035"/>
+</kw>
+<kw name="Input Password">
+<arg>password</arg>
+<kw name="Input The Password" library="Steps">
+<arg>${password}</arg>
+<msg timestamp="20241016 11:17:34.618" level="INFO">Entered password</msg>
+<status status="PASS" starttime="20241016 11:17:31.035" endtime="20241016 11:17:34.618"/>
+</kw>
+<status status="PASS" starttime="20241016 11:17:31.035" endtime="20241016 11:17:34.618"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click OK Button To Submit" library="Steps">
+<msg timestamp="20241016 11:17:38.390" level="INFO">Login form submitted</msg>
+<status status="PASS" starttime="20241016 11:17:34.618" endtime="20241016 11:17:38.390"/>
+</kw>
+<status status="PASS" starttime="20241016 11:17:34.618" endtime="20241016 11:17:38.390"/>
+</kw>
+<kw name="Welcome Page Should Be Open">
+<kw name="My LinkStation Should Be Found" library="Steps">
+<status status="PASS" starttime="20241016 11:17:38.390" endtime="20241016 11:17:38.398"/>
+</kw>
+<status status="PASS" starttime="20241016 11:17:38.390" endtime="20241016 11:17:38.398"/>
+</kw>
+<kw name="Go to Firmware">
+<kw name="Go To The Firmware" library="Steps">
+<msg timestamp="20241016 11:17:44.957" level="INFO">Go_to_the_Firmware Success</msg>
+<status status="PASS" starttime="20241016 11:17:38.404" endtime="20241016 11:17:44.957"/>
+</kw>
+<status status="PASS" starttime="20241016 11:17:38.398" endtime="20241016 11:17:44.957"/>
+</kw>
+<kw name="Close Browser">
+<kw name="Close My Browser" library="Steps">
+<msg timestamp="20241016 11:17:51.238" level="INFO">Browser closed</msg>
+<status status="PASS" starttime="20241016 11:17:44.957" endtime="20241016 11:17:53.057"/>
+</kw>
+<status status="PASS" starttime="20241016 11:17:44.957" endtime="20241016 11:17:53.057"/>
+</kw>
+<status status="PASS" starttime="20241016 11:17:27.617" endtime="20241016 11:17:53.057"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="Steps">
+<arg>${URL}</arg>
+<msg timestamp="20241016 11:17:57.144" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B2034160&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。')': /session/8cf99fba18b5b8fde0979fa083c2fa0d/url</msg>
+<msg timestamp="20241016 11:18:01.202" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B2034310&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。')': /session/8cf99fba18b5b8fde0979fa083c2fa0d/url</msg>
+<msg timestamp="20241016 11:18:05.255" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B20344F0&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。')': /session/8cf99fba18b5b8fde0979fa083c2fa0d/url</msg>
+<msg timestamp="20241016 11:18:09.327" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=58043): Max retries exceeded with url: /session/8cf99fba18b5b8fde0979fa083c2fa0d/url (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B20346A0&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。'))</msg>
+<status status="FAIL" starttime="20241016 11:17:53.057" endtime="20241016 11:18:09.364"/>
+</kw>
+<kw name="Maximize Browser Window" library="Steps">
+<status status="NOT RUN" starttime="20241016 11:18:09.364" endtime="20241016 11:18:09.364"/>
+</kw>
+<kw name="Set Selenium Speed" library="Steps">
+<arg>${DELAY}</arg>
+<status status="NOT RUN" starttime="20241016 11:18:09.364" endtime="20241016 11:18:09.364"/>
+</kw>
+<status status="FAIL" starttime="20241016 11:17:53.057" endtime="20241016 11:18:09.364"/>
+</kw>
+<kw name="Input Password">
+<arg>password</arg>
+<status status="NOT RUN" starttime="20241016 11:18:09.364" endtime="20241016 11:18:09.364"/>
+</kw>
+<kw name="Submit Credentials">
+<status status="NOT RUN" starttime="20241016 11:18:09.364" endtime="20241016 11:18:09.364"/>
+</kw>
+<kw name="Welcome Page Should Be Open">
+<status status="NOT RUN" starttime="20241016 11:18:09.364" endtime="20241016 11:18:09.364"/>
+</kw>
+<kw name="Go to Firmware">
+<status status="NOT RUN" starttime="20241016 11:18:09.364" endtime="20241016 11:18:09.364"/>
+</kw>
+<kw name="Close Browser">
+<status status="NOT RUN" starttime="20241016 11:18:09.364" endtime="20241016 11:18:09.364"/>
+</kw>
+<status status="FAIL" starttime="20241016 11:17:53.057" endtime="20241016 11:18:09.364"/>
+</iter>
+<status status="FAIL" starttime="20241016 11:17:27.617" endtime="20241016 11:18:09.364"/>
+</for>
+<status status="FAIL" starttime="20241016 11:17:27.616" endtime="20241016 11:18:09.364">MaxRetryError: HTTPConnectionPool(host='localhost', port=58043): Max retries exceeded with url: /session/8cf99fba18b5b8fde0979fa083c2fa0d/url (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B20346A0&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。'))</status>
+</test>
+<kw name="Close Browser" type="TEARDOWN">
+<kw name="Close My Browser" library="Steps">
+<msg timestamp="20241016 11:18:15.130" level="INFO">Browser closed</msg>
+<status status="PASS" starttime="20241016 11:18:09.374" endtime="20241016 11:18:15.130"/>
+</kw>
+<status status="PASS" starttime="20241016 11:18:09.374" endtime="20241016 11:18:15.130"/>
+</kw>
+<status status="FAIL" starttime="20241016 11:17:21.655" endtime="20241016 11:18:15.130"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20241016 11:17:57.144" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B2034160&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。')': /session/8cf99fba18b5b8fde0979fa083c2fa0d/url</msg>
+<msg timestamp="20241016 11:18:01.202" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B2034310&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。')': /session/8cf99fba18b5b8fde0979fa083c2fa0d/url</msg>
+<msg timestamp="20241016 11:18:05.255" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000219B20344F0&gt;: Failed to establish a new connection: [WinError 10061] 無法連線，因為目標電腦拒絕連線。')': /session/8cf99fba18b5b8fde0979fa083c2fa0d/url</msg>
+</errors>
+</robot>
