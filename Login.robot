@@ -18,7 +18,7 @@ Valid Login
         Submit Credentials
         Welcome Page Should Be Open
         Go to Firmware
-        # Start Firmware Update
+        Start Firmware Update
         # Close Browser
         Go To Login Page
     END

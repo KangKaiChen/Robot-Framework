@@ -2,10 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
-import psutil
 from robot.api import logger
 from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class Steps:
 
@@ -19,6 +19,7 @@ class Steps:
 
         self.driver.get(login_url)
         logger.info("Browser opened with URL: " + login_url)
+            # 等待 'login_base' 元素顯示，直到頁面完全加載
 
     def maximize_browser_window(self):
         self.driver.maximize_window()
@@ -78,7 +79,9 @@ class Steps:
             time.sleep(1)  
             self.driver.find_element(By.XPATH, '//input[@type="file"]').send_keys(file)
             logger.info(f"File {file} has been uploaded.")
-            time.sleep(2)  
+            time.sleep(1)
+            self.driver.find_element(By.NAME, "fwupbutton").click()
+            self.driver.switch_to.default_content()
             time.sleep(270)  
             logger.info("Firmware_Update ")
 
