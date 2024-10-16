@@ -8,12 +8,13 @@ ${URL}            http://${DUT_IP}/
 ${Message in Login Page}    Copyright © 2015 Buffalo Inc.
 ${DELAY}          20
 ${FILE}           C:\\Users\\kevin_kang\\Desktop\\TSB\\WSR-5400XE6 Ver.1.14\\WSR-5400XE6_CRC_update.bin
+${password}       password
 
 *** Test Cases ***
 Valid Login
+    Open Browser To Login Page
     FOR    ${i}    IN RANGE    1    11
-        Open Browser To Login Page
-        Input Password    password
+        Input Password    ${password}
         Submit Credentials
         Welcome Page Should Be Open
         Go to Firmware
