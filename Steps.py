@@ -82,7 +82,7 @@ class Steps:
             time.sleep(1)
             self.driver.find_element(By.NAME, "fwupbutton").click()
             self.driver.switch_to.default_content()
-            time.sleep(270)  
+            time.sleep(250)  
             logger.info("Firmware_Update ")
 
     def Go_Back_To_Login_Page(self):
