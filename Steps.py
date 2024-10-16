@@ -4,10 +4,16 @@ from selenium.webdriver.common.keys import Keys
 import time
 import psutil
 from robot.api import logger
+from selenium.webdriver.chrome.options import Options
+
+
 class Steps:
 
     def __init__(self):  # 使用 Chrome
-        self.driver = webdriver.Chrome()
+
+        chrome_options = Options()
+        chrome_options.add_argument("--incognito")  # 啟用無痕模式
+        self.driver = webdriver.Chrome(options=chrome_options)
 
     def open_browser(self, login_url):
 
@@ -49,7 +55,6 @@ class Steps:
     def close_my_browser(self):
         self.driver.quit()
         logger.info("Browser closed")
-        kill_browser_processes()
     def my_LinkStation_should_be_found(self):
         modelname_prefix = self.driver.find_element(By.XPATH, '//*[@class="modelname_prefix"]')
 
@@ -77,9 +82,13 @@ class Steps:
             time.sleep(270)  
             logger.info("Firmware_Update ")
 
-def kill_browser_processes():
-    for proc in psutil.process_iter(['name']):
-        if proc.info['name'] in ['chromedriver.exe', 'chrome.exe']:  # 根據使用的瀏覽器調整名稱
-            proc.terminate()  # 強制關閉進程
+    def Go_Back_To_Login_Page(self):
+        self.driver.find_element(By.ID, "icon_LOGOUT").click()
+        logger.info("Logout")
+
+
+
+
+
 
 

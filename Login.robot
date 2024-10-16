@@ -18,7 +18,8 @@ Valid Login
         Welcome Page Should Be Open
         Go to Firmware
         # Start Firmware Update
-        Close Browser
+        # Close Browser
+        Go To Login Page
     END
 
 *** Keywords ***
@@ -49,6 +50,9 @@ Close Browser
 
 Go to Firmware
     Go to the Firmware
+
+Go To Login Page
+    Go Back To Login Page
 
 Start Firmware Update
     Firmware Update    ${FILE}
