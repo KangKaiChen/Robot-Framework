@@ -85,9 +85,18 @@ class Steps:
             time.sleep(250)  
             logger.info("Firmware_Update ")
 
-    def Go_Back_To_Login_Page(self):
+    def Go_Back_To_Login_Page(self,fwversion):
         self.driver.find_element(By.ID, "icon_LOGOUT").click()
         logger.info("Logout")
+        # 等待.login_main元素出現
+        login_main = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "login_main"))
+        )
+        text =login_main.get_attribute('innerHTML').splitlines()[1].strip()
+        assert text == fwversion, f"Firmware version mismatch! Expected: {fwversion}, but got: {text}"
+        # 輸出結果
+        logger.info(f"AirStation: {text}")
+
 
 
 

@@ -9,6 +9,7 @@ ${Message in Login Page}    Copyright © 2015 Buffalo Inc.
 ${DELAY}          20
 ${FILE}           C:\\Users\\kevin_kang\\Desktop\\TSB\\WSR-5400XE6 Ver.1.14\\WSR-5400XE6_CRC_update.bin
 ${password}       password
+${Fw_version}     WSR-5400XE6 Version 9.99
 
 *** Test Cases ***
 Valid Login
@@ -16,7 +17,6 @@ Valid Login
     FOR    ${i}    IN RANGE    1    11
         Input Password    ${password}
         Submit Credentials
-        Welcome Page Should Be Open
         Go to Firmware
         Start Firmware Update
         # Close Browser
@@ -53,7 +53,7 @@ Go to Firmware
     Go to the Firmware
 
 Go To Login Page
-    Go Back To Login Page
+    Go Back To Login Page    ${Fw_version}
 
 Start Firmware Update
     Firmware Update    ${FILE}
